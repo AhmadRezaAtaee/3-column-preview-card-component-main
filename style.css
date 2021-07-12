@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+:root{
+    --paragraph: hsla(0, 0%, 100%, 0.75);
+    --primary: hsl(0, 0%, 95%);
+}
+@font-face {
+    font-family: "Lexend";
+    src: url("assets/Lexend.ttf");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Shoulders";
+    src: url("assets/Shoulders.ttf");
+    font-weight: 700;
+}
+body{
+    background-color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Lexend";
+    line-height: 1.7;
+}
+.card{
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 900px;
+}
+.column{
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 50px;
+}
+.column:nth-of-type(1){
+    background-color: hsl(31, 77%, 52%); 
+}
+.column:nth-child(2){
+    background-color: hsl(184, 100%, 22%); 
+}
+.column:nth-child(3){
+    background-color: hsl(179, 100%, 13%); 
+}
+.cardIcon{
+    width: 60px;
+}
+.cardHead{
+    color: var(--primary);
+    font-family: "Shoulders";
+    margin: 15px 0;
+    font-size: 40px;
+    font-weight: bolder;
+    font-variant-caps: all-petite-caps;
+}
+.cardDescription{
+    color: var(--paragraph);
+    margin-bottom: 70px;
+    font-size: 13px;
+    opacity: 0.8;
+    flex-grow: 1;
+}
+.cardBtn{
+    background-color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 500px;
+    width: fit-content;
+    font-family: "Lexend";
+}
+.cardBtn:hover{
+    background-color: transparent;
+    color: var(--primary) !important;
+}
+.cardBtn:active{
+    transform: translateY(10%) scale(98%);
+}
+
+.column:nth-of-type(1)>.cardBtn{
+    color: hsl(31, 77%, 52%); 
+}
+.column:nth-child(2)>.cardBtn{
+    color: hsl(184, 100%, 22%); 
+}
+.column:nth-child(3)>.cardBtn{
+    color: hsl(179, 100%, 13%); 
+}
+
+@media screen and (max-width:920px){
+    .card{
+        flex-direction: column;
+        width: 90%;
+    }
+    body{
+        height: auto;
+        padding: 50px 0;
+    }
+}
